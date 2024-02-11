@@ -17,7 +17,7 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args:
     - 'push'
-    - 'gcr.io/logical-light-411605/content-api'
+    - 'gcr.io/logical-light-411605//content-api:latest'
 
   # Build the image
 - name: 'gcr.io/cloud-builders/docker'
@@ -32,4 +32,4 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args:
     - 'push'
-    - 'gcr.io/logical-light-411605/rails-app'
+    - 'gcr.io/logical-light-411605//content-api:latest'
