@@ -4,32 +4,32 @@ steps:
   args: ['clone', 'https://github.com/Ankit-Deswal/cloud-platform-multi-container-demo-app.git']
   dir: '/workspace'
 
-# Build the image
+# Build the content-api image
 - name: 'gcr.io/cloud-builders/docker'
   args:
     - 'build'
     - '--tag'
-    - 'gcr.io/logical-light-411605/cloud-platform-multi-container-demo-app.git/content-api:latest'
+    - 'gcr.io/logical-light-411605/cloud-platform-multi-container-demo-app/content-api:latest'  # Correct image tag format
     - '.'
   dir: './content-api'
 
-  # Push the image
+# Push the content-api image
 - name: 'gcr.io/cloud-builders/docker'
   args:
     - 'push'
-    - 'gcr.io/logical-light-411605//content-api:latest'
+    - 'gcr.io/logical-light-411605/cloud-platform-multi-container-demo-app/content-api:latest'  # Correct image tag format
 
-  # Build the image
+# Build the rails-app image
 - name: 'gcr.io/cloud-builders/docker'
   args:
     - 'build'
     - '--tag'
-    - 'gcr.io/logical-light-411605/cloud-platform-multi-container-demo-app.git/rails-app:latest'
+    - 'gcr.io/logical-light-411605/cloud-platform-multi-container-demo-app/rails-app:latest'  # Correct image tag format
     - '.'
   dir: './rails-app'
 
-# Push the image
+# Push the rails-app image
 - name: 'gcr.io/cloud-builders/docker'
   args:
     - 'push'
-    - 'gcr.io/logical-light-411605//content-api:latest'
+    - 'gcr.io/logical-light-411605/cloud-platform-multi-container-demo-app/rails-app:latest'  # Correct image tag format
