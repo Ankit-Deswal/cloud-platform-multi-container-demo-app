@@ -9,7 +9,7 @@ steps:
   args:
     - 'build'
     - '--tag'
-    - 'gcr.io/logical-light-411605/cloud-platform-multi-container-demo-app.git/content-api'
+    - 'gcr.io/logical-light-411605/cloud-platform-multi-container-demo-app.git/content-api:latest'
     - '.'
   dir: './content-api'
 
@@ -24,7 +24,7 @@ steps:
   args:
     - 'build'
     - '--tag'
-    - 'gcr.io/logical-light-411605/cloud-platform-multi-container-demo-app.git/rails-app'
+    - 'gcr.io/logical-light-411605/cloud-platform-multi-container-demo-app.git/rails-app:latest'
     - '.'
   dir: './rails-app'
 
